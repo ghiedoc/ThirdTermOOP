@@ -64,7 +64,7 @@ class Student{
     }
     
     void display(){
-        System.out.println("COurse: " + course);
+        System.out.println("Course: " + course);
     }
     
     
