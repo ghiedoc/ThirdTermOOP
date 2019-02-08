@@ -61,7 +61,7 @@ public class PracticeIt {
 
     public static void main(String[] args) {
         PracticeIt template = new PracticeIt();
-        ArrayList<String> arr = new ArrayList<String>();
+        ArrayList<String> arr = new ArrayList<>();
         arr.add("Doki");
         arr.add("abababab");
         arr.add("Gilly");
