@@ -4,6 +4,7 @@ package thirdterm;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.Arrays;
 import java.util.HashSet;
 
 public class Review {
@@ -122,6 +123,22 @@ public class Review {
         
         
     }
+    
+    public static void array(){
+        int[] data = {27, 51, 33, -1, 101};
+        System.out.print("data = ");
+        System.out.println(Arrays.toString(data));
+
+    }
+    
+    public static void array1(){
+        int[] data = new int[10];
+        for(int i = 0; i < 10; i++){
+            if(i >= -6 && i <=38){
+                System.out.println(data[i]);
+            }
+        }
+    }
 
     public static void main(String[] args) {
         Review r = new Review();
@@ -135,5 +152,6 @@ public class Review {
         System.out.println(r.isInsideElement(arr, "aso"));
         
         System.out.println(r.totalUnique("C:\\Users\\Gillian\\Documents\\NetBeansProjects\\OOP-master\\src\\test\\files\\TestThree.txt"));
+        array1();
     }
 }
