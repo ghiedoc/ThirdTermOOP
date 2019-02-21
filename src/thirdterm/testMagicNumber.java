@@ -26,7 +26,6 @@ public class testMagicNumber {
         arr.add(new Balls(2));
 
         //sorting
-        int temp = 0;
         for (int i = 0; i < arr.size(); i++) {
             for (int j = 0; j < arr.size(); j++) {
                 if (arr.get(j).Magicnumber > arr.get(i).Magicnumber) {
