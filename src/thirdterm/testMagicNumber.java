@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Gillian
  */
-public class testMagicNumber {
+public class testMagicNumber{
 
     /**
      * @param args the command line arguments
@@ -42,5 +42,5 @@ public class testMagicNumber {
             arr.get(i).PrintNumber();
         }
     }
-
+    
 }
