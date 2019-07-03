@@ -48,7 +48,7 @@ public class ArrayLinkList {
             }
             i++;
         }
-        System.out.println("reamining: " + arr);
+        System.out.println("remaining: " + arr);
     }
 
     public static void removeEven(ArrayList<String> arr) {

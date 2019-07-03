@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  *
@@ -39,7 +40,6 @@ public class testingMp3 {
             while ((line = br.readLine()) != null) {
 
                 String[] words = line.split(" ");
-                
 
                 for (int i = 0; i < words.length; i++) {
                     for (int j = 0; j < stopWordsBank.length; j++) {
@@ -52,7 +52,7 @@ public class testingMp3 {
 
                 }
                 System.out.println(Arrays.toString(words));
-                
+
             }
             System.out.println("countStopWords: " + stopWordsCount);
 
@@ -65,11 +65,56 @@ public class testingMp3 {
     }
 
     /**
+     * this method counts the frequency of each term present in the whole
+     * document. The frequency of each term can be calculated using the
+     * following formula:
+     *
+     * TF(t) = (Number of times term t appears in a document) / (Total number of
+     * terms in the document). Does not return any value but takes in the total
+     * number of terms in the document as input parameter.
+     *
+     * This method also writes the frequencies in a separate file called
+     * TermFrequencies.txt
+     *
+     * @param TotalTerms
+     */
+    public void countTermFrequencyWrite(int TotalTerms) {
+        String path = "C:\\Users\\Gillian\\Documents\\NetBeansProjects\\AnalyticsTest\\src\\analyticstest\\sample.txt";
+        
+        HashMap<String, Integer> repetition = new HashMap<>();
+        
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(path));
+
+            String line = "";
+
+            while ((line = br.readLine()) != null) {
+
+                String[] words = line.split(" ");
+                
+                for(String word: words){
+                    String toLower = word.toLowerCase();
+                    Integer count = repetition.get(toLower);
+                    if(count == null){
+                        count = 1;
+                    }
+                    repetition.put(word, count + 1);
+                    System.out.println("term: " + toLower + ", count: " + count);
+                }               
+            }
+
+        } catch (IOException ex) {
+            System.out.println("error");
+        }
+    }
+
+    /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         testingMp3 temp = new testingMp3();
         temp.countStopWords();
+        temp.countTermFrequencyWrite(5);
     }
 
 }
